@@ -16,18 +16,37 @@ let winners=[];
 //disabling a button
 function disablebtn(){
     if(wholeArray.length===0){
-        btnWinner.style.backgroundColor="black";
+        // look for winners button
+        btnWinner.style.backgroundColor="";
         btnWinner.style.color="white";
         btnWinner.style.opacity=0.5;
-        btnWinner.disabled=true;  
+        btnWinner.disabled=true;
+        
+        //reset button
+        ResetBtn.style.backgroundColor="";
+        ResetBtn.style.color="white";
+        ResetBtn.style.opacity=0.5;
+        ResetBtn.disabled=true;
     }
     if(wholeArray.length===20){
-        btnWinner.style.color="green";
+        // winner button
+        btnWinner.style.color="white";
+        btnWinner.style.backgroundColor="black";
         btnWinner.disabled=false;  
+
+        // look for winners button
+        ResetBtn.style.color="white";
+        ResetBtn.style.backgroundColor="black";
+        ResetBtn.disabled=false;  
     }
 }
 disablebtn();
 
+// number buuton
+
+btnNumber.style.color="white";
+btnNumber.style.backgroundColor="black"
+btnNumber.disabled=false;  
 
 btnNumber.addEventListener("click",(e)=>{
   
