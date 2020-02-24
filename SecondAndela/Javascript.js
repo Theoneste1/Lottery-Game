@@ -29,13 +29,12 @@ ResetBtn.addEventListener('click',function(e){
         var index=wholeArray.indexOf(number);
         if( index===18)
             {
-            return`<h2 class="doneRottery">It is okay Now</h2>`
+            return`<h2 class="doneRottery">GAME IS DONE!!</h2>`
         }
 
        
     }).join("");
     
-
 
 });
 
