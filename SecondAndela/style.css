@@ -4,24 +4,17 @@
 	Georgia, Times, 
 	'Times New Roman', serif;
 }
-.heading{
-	text-align: center;
-	background-color: f4f4f4;
-	border: solid black;
-	box-shadow: blue;
 
-	
-}
-
-.header{
+.header,.bottom{
 	text-align: center;
-	color: blue;
+	color: white;
+	padding: 10px;
+	background-color: rgba(102, 74, 37, 0.836);
 	
 }
 
 
 .btn{
-
     width: 30%;
     height: 4rem;
 	color: black;
@@ -93,8 +86,7 @@ text-align: center;
 	
 	.number{
 		width: 20px;
-		height: 20px;
-		display:inline-flex;
+		height: 20px;		display:inline-flex;
 		font-size: 10px;
 		margin: 2px;
 		align-items: center;
@@ -135,12 +127,15 @@ text-align: center;
 		margin-left: auto;
 	}
 	
-	.header{
+	.header, .bottom{
 		text-align: center;
-		color: blue;
+		color: white;
 		font-size: 10px;
+		padding: 5px;
+		background-color: rgba(102, 74, 37, 0.836);
 		
 	}
+	
 	.doneRottery{
 	font-size: 10px;
 	text-align: center;

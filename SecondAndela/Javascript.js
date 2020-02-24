@@ -5,12 +5,57 @@ let btnWinner=document.querySelector('.showWinners');
 let ResetBtn= document.querySelector('.reset');
 // console.log(btnWinner);
 // console.log(btnNumber);
+let newholeArray=[];
+let secondnewholeArray=[];
+var arrayNumbers=[];
+var wholeArray=[];
+let winners=[];
+
+
+
+//disabling a button
+function disablebtn(){
+    if(wholeArray.length===0){
+        btnWinner.style.backgroundColor="black";
+        btnWinner.style.color="white";
+        btnWinner.style.opacity=0.5;
+        btnWinner.disabled=true;  
+    }
+    if(wholeArray.length===20){
+        btnWinner.style.color="green";
+        btnWinner.disabled=false;  
+    }
+}
+disablebtn();
+
 
 btnNumber.addEventListener("click",(e)=>{
-//    console.log(e)
-   displayProducedNumbers();
-//    console.log(displayProducedNumbers());
-   isWinner()
+  
+    disablebtn();
+ if (newholeArray.length===0){
+    newholeArray=wholeArray;
+
+    console.log(`newholeArray ${[newholeArray]} yes`);
+    return  displayProducedNumbers();
+ }  
+
+ else if(newholeArray.length===20){
+     secondnewholeArray=wholeArray;
+      for(var j=0; j<newholeArray.length; j++){
+        for(var i=0; i<wholeArray.length; i++){
+
+          if(newholeArray[j]===secondnewholeArray[i]){
+             console.log("is the same kbs")
+             window.location.reload();
+             newholeArray=[];
+             newholeArray.length=0;
+             
+          } 
+         }
+  }
+
+}
+return  displayProducedNumbers();
 
 });
 
@@ -24,18 +69,9 @@ btnWinner.addEventListener("click", function(e){
 })
 
 ResetBtn.addEventListener('click',function(e){
-    x = document.getElementById("demo");
-    x.innerHTML = wholeArray.map(number=>{
-        var index=wholeArray.indexOf(number);
-        if( index===18)
-            {
-            return`<h2 class="doneRottery">GAME IS DONE!!</h2>`
-        }
 
-       
-    }).join("");
-    
-
+    //reloading to bring new screen
+    window.location.reload(); 
 });
 
 
@@ -75,9 +111,6 @@ function displayProducedNumbers() {
 
 //   anctivatingo
 
-var arrayNumbers=[];
-var wholeArray=[];
-let winners=[];
 
 // looking for the winners
 function isWinner(){
@@ -112,14 +145,14 @@ function isWinner(){
     }
 
     console.log(`winners: [${winners}]`);
-       console.log(`arrayNumbers: [${arrayNumbers.length}]`)
-       console.log(`wholeArray :[${wholeArray.length}]`)
+       console.log(`arrayNumbers: [${arrayNumbers}]`)
+       console.log(`wholeArray :[${wholeArray}]`)
 
         return wholeArray;
 }
 
 isWinner();
-console.log(wholeArray);
+// console.log(wholeArray);
 
 
 
